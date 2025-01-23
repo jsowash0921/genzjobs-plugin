@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Gen Z Jobs API
+  version: 1.0.0
+  description: API for accessing job listings from Gen Z Jobs.
+servers:
+  - url: https://genzjobs.com/api
+paths:
+  /jobs:
+    get:
+      summary: Get job listings
+      description: Retrieve a list of jobs from Gen Z Jobs.
+      parameters:
+        - name: q
+          in: query
+          description: Search keyword for job titles or descriptions.
+          required: false
+          schema:
+            type: string
+        - name: l
+          in: query
+          description: Location of the jobs (e.g., city or state).
+          required: false
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: Type of job (e.g., remote, full-time, part-time).
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of job postings.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        title:
+                          type: string
+                        location:
+                          type: string
+                        description:
+                          type: string
+                        company:
+                          type: string
+                        type:
+                          type: string
+                        posted_date:
+                          type: string
+                          format: date
