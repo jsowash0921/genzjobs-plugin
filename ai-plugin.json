@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "genz_jobs",
+  "name_for_human": "Gen Z Jobs",
+  "description_for_model": "Provides job listings from Gen Z Jobs, including location-based and keyword-specific searches.",
+  "description_for_human": "Search for jobs tailored to Gen Z preferences, including remote work and purpose-driven careers.",
+  "auth": {
+    "type": "api_key",
+    "instructions": "Visit https://genzjobs.com to generate your API key.",
+    "api_key": {
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://<your-github-username>.github.io/genzjobs-plugin/openapi.yaml"
+  },
+  "logo_url": "https://genzjobs.com/logo.png",
+  "contact_email": "support@genzjobs.com",
+  "legal_info_url": "https://genzjobs.com/terms"
+}
